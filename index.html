@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Solutions - Digital Excellence</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS for Bootstrap Website -->
+    <style>
+        :root {
+          --bs-primary: #0891b2;
+          --bs-primary-rgb: 8, 145, 178;
+          --bs-secondary: #10b981;
+          --bs-secondary-rgb: 16, 185, 129;
+          --bs-light: #f8f9fa;
+          --bs-dark: #212529;
+        }
+
+        /* Typography */
+        body {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #4b5563;
+        }
+
+        .display-3,
+        .display-5 {
+          font-weight: 700;
+          line-height: 1.2;
+        }
+
+        .lead {
+          font-size: 1.125rem;
+          font-weight: 400;
+        }
+
+        /* Header Styles */
+        .navbar {
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+          padding: 1rem 0;
+        }
+
+        .navbar-brand {
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+
+        .nav-link {
+          color: #4b5563 !important;
+          transition: color 0.3s ease;
+          padding: 0.5rem 1rem !important;
+        }
+
+        .nav-link:hover {
+          color: var(--bs-primary) !important;
+        }
+
+        .navbar-toggler {
+          padding: 0.25rem 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+          box-shadow: none;
+        }
+
+        /* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 8rem 0 6rem;
+  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80") 
+              center center / cover no-repeat;
+  margin-top: 76px; /* Account for fixed navbar */
+  color: #fff;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* Dark overlay */
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2; /* Text above overlay */
+}
+
+.hero-section h1,
+.hero-section p {
+  color: #fff;
+}
+
+        /*.hero-section {
+          padding: 8rem 0 6rem;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          margin-top: 76px; /* Account for fixed navbar */
+        }*/
+
+        .hero-section h1 {
+          margin-bottom: 1.5rem;
+        }
+
+        /* Feature Icons */
+        .feature-icon {
+          width: 4rem;
+          height: 4rem;
+          font-size: 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border-radius: 0.75rem;
+        }
+
+        .card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+        /* Buttons */
+        .btn {
+          border-radius: 0.5rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+          background-color: var(--bs-primary);
+          border-color: var(--bs-primary);
+        }
+
+        .btn-primary:hover {
+          background-color: #0e7490;
+          border-color: #0e7490;
+          transform: translateY(-1px);
+        }
+
+        .btn-outline-primary {
+          color: var(--bs-primary);
+          border-color: var(--bs-primary);
+        }
+
+        .btn-outline-primary:hover {
+          background-color: var(--bs-primary);
+          border-color: var(--bs-primary);
+          transform: translateY(-1px);
+        }
+
+        /* Sections */
+        section {
+          scroll-margin-top: 76px; /* Account for fixed navbar */
+        }
+
+        .bg-light {
+          background-color: #f8f9fa !important;
+        }
+
+        /* Footer */
+        footer {
+          background-color: #1f2937 !important;
+        }
+
+        footer a:hover {
+          color: var(--bs-primary) !important;
+          transition: color 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-section {
+            padding: 6rem 0 4rem;
+          }
+
+          .display-3 {
+            font-size: 2.5rem;
+          }
+
+          .navbar-nav .nav-item:last-child {
+            margin-top: 1rem;
+            margin-left: 0 !important;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .hero-section {
+            padding: 5rem 0 3rem;
+          }
+
+          .display-3 {
+            font-size: 2rem;
+          }
+
+          .btn-lg {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+          }
+        }
+
+        /* Smooth Scrolling */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Focus States for Accessibility */
+        .btn:focus,
+        .nav-link:focus,
+        .form-control:focus {
+          box-shadow: 0 0 0 0.2rem rgba(8, 145, 178, 0.25);
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .hero-section > .container > .row {
+          animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#home">
+                <i class="bi bi-lightning-charge-fill me-2"></i>ModernSolutions
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary btn-sm px-3" href="#contact">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-10 col-xl-8">
+                        <h1 class="display-3 fw-bold mb-4">
+                            Modern Solutions for
+                            <span class="text-primary">Digital Excellence</span>
+                        </h1>
+                        <p class="lead mb-5 text-muted">
+                            We create exceptional user experiences through clean design, cutting-edge technology, 
+                            and seamless functionality across all devices.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                            <a href="#contact" class="btn btn-primary btn-lg px-4">
+                                Get Started Today
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                            <a href="#about" class="btn btn-outline-primary btn-lg px-4">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="about" class="py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold mb-3">Why Choose Our Platform</h2>
+                        <p class="lead text-muted">
+                            Built with modern technologies and designed for optimal performance across all devices.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="feature-icon bg-primary bg-opacity-10 rounded-3 d-inline-flex align-items-center justify-content-center mb-3">
+                                    <i class="bi bi-lightning-charge text-primary"></i>
+                                </div>
+                                <h5 class="card-title fw-bold">Lightning Fast</h5>
+                                <p class="card-text text-muted">
+                                    Optimized performance with 90+ Lighthouse scores across all metrics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="feature-icon bg-primary bg-opacity-10 rounded-3 d-inline-flex align-items-center justify-content-center mb-3">
+                                    <i class="bi bi-people text-primary"></i>
+                                </div>
+                                <h5 class="card-title fw-bold">User-Centered</h5>
+                                <p class="card-text text-muted">
+                                    Designed with accessibility and user experience as top priorities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="feature-icon bg-primary bg-opacity-10 rounded-3 d-inline-flex align-items-center justify-content-center mb-3">
+                                    <i class="bi bi-check-circle text-primary"></i>
+                                </div>
+                                <h5 class="card-title fw-bold">Reliable</h5>
+                                <p class="card-text text-muted">
+                                    Built with modern frameworks and tested across all major browsers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold mb-3">Our Services</h2>
+                        <p class="lead text-muted">
+                            Comprehensive solutions tailored to your business needs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-star-fill text-primary me-2"></i>
+                                    <h5 class="card-title mb-0 fw-bold">Web Development</h5>
+                                </div>
+                                <p class="card-text text-muted mb-3">
+                                    Custom websites and web applications built with modern frameworks, 
+                                    optimized for performance and user experience.
+                                </p>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                        <small>Responsive Design</small>
+                                    </li>
+                                    <li class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                        <small>SEO Optimization</small>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                        <small>Performance Optimization</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-star-fill text-primary me-2"></i>
+                                    <h5 class="card-title mb-0 fw-bold">UI/UX Design</h5>
+                                </div>
+                                <p class="card-text text-muted mb-3">
+                                    User-centered design solutions that prioritize usability, 
+                                    accessibility, and aesthetic appeal.
+                                </p>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                        <small>User Research</small>
+                                    </li>
+                                    <li class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                        <small>Wireframing & Prototyping</small>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                        <small>Accessibility Testing</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold mb-3">Ready to Get Started?</h2>
+                        <p class="lead text-muted mb-4">
+                            Let's discuss how we can help bring your vision to life with modern, user-focused solutions.
+                        </p>
+                        <a href="mailto:contact@modernsolutions.com" class="btn btn-primary btn-lg px-4">
+                            Contact Us Today
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-lightning-charge-fill text-primary me-2 fs-4"></i>
+                        <h5 class="mb-0 fw-bold">ModernSolutions</h5>
+                    </div>
+                    <p class="text-muted mb-3">
+                        Creating exceptional digital experiences through modern design and cutting-edge technology.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light">
+                            <i class="bi bi-twitter fs-5"></i>
+                        </a>
+                        <a href="#" class="text-light">
+                            <i class="bi bi-linkedin fs-5"></i>
+                        </a>
+                        <a href="#" class="text-light">
+                            <i class="bi bi-github fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#about" class="text-muted text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="#services" class="text-muted text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Portfolio</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Documentation</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Status</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">Stay Updated</h6>
+                    <p class="text-muted mb-3">Get the latest updates and insights delivered to your inbox.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4 border-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 ModernSolutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript for Bootstrap Website -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const navLinks = document.querySelectorAll('a[href^="#"]')
+          const bootstrap = window.bootstrap
+
+          navLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault()
+
+              const targetId = this.getAttribute("href")
+              const targetSection = document.querySelector(targetId)
+
+              if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 76
+
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: "smooth",
+                })
+
+                const navbarCollapse = document.querySelector(".navbar-collapse")
+                if (navbarCollapse.classList.contains("show")) {
+                  const bsCollapse = new bootstrap.Collapse(navbarCollapse)
+                  bsCollapse.hide()
+                }
+              }
+            })
+          })
+
+          const sections = document.querySelectorAll("section[id]")
+          const navItems = document.querySelectorAll('.nav-link[href^="#"]')
+
+          function updateActiveNav() {
+            const scrollPos = window.scrollY + 100
+
+            sections.forEach((section) => {
+              const sectionTop = section.offsetTop
+              const sectionHeight = section.offsetHeight
+              const sectionId = section.getAttribute("id")
+
+              if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navItems.forEach((item) => {
+                  item.classList.remove("active")
+                  if (item.getAttribute("href") === `#${sectionId}`) {
+                    item.classList.add("active")
+                  }
+                })
+              }
+            })
+          }
+
+          window.addEventListener("scroll", updateActiveNav)
+
+          const subscribeBtn = document.querySelector("footer .btn-primary")
+          const emailInput = document.querySelector('footer input[type="email"]')
+
+          if (subscribeBtn && emailInput) {
+            subscribeBtn.addEventListener("click", function () {
+              const email = emailInput.value.trim()
+
+              if (email && isValidEmail(email)) {
+                this.innerHTML = '<i class="bi bi-check-circle me-1"></i>Subscribed!'
+                this.classList.remove("btn-primary")
+                this.classList.add("btn-success")
+                emailInput.value = ""
+
+                setTimeout(() => {
+                  this.innerHTML = "Subscribe"
+                  this.classList.remove("btn-success")
+                  this.classList.add("btn-primary")
+                }, 3000)
+              } else {
+                emailInput.classList.add("is-invalid")
+                setTimeout(() => {
+                  emailInput.classList.remove("is-invalid")
+                }, 3000)
+              }
+            })
+
+            emailInput.addEventListener("keypress", (e) => {
+              if (e.key === "Enter") {
+                subscribeBtn.click()
+              }
+            })
+          }
+
+          function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            return emailRegex.test(email)
+          }
+
+          const navbar = document.querySelector(".navbar")
+
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+              navbar.classList.add("shadow")
+            } else {
+              navbar.classList.remove("shadow")
+            }
+          })
+
+          const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+          }
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1"
+                entry.target.style.transform = "translateY(0)"
+              }
+            })
+          }, observerOptions)
+
+          const cards = document.querySelectorAll(".card")
+          cards.forEach((card) => {
+            card.style.opacity = "0"
+            card.style.transform = "translateY(20px)"
+            card.style.transition = "opacity 0.6s ease, transform 0.6s ease"
+            observer.observe(card)
+          })
+
+          console.log("[v0] Bootstrap website initialized successfully")
+        })
+
+        window.addEventListener("load", () => {
+          const link = document.createElement("link")
+          link.rel = "preload"
+          link.href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/fonts/bootstrap-icons.woff2"
+          link.as = "font"
+          link.type = "font/woff2"
+          link.crossOrigin = "anonymous"
+          document.head.appendChild(link)
+        })
+    </script>
+</body>
+</html>
